@@ -1,2 +1,2 @@
 # saifprojects
-These are my projects.
+These are my coding projects.
