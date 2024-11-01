@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="photos.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">
+          <a href="index.html"><img src="logo.png" alt="logo" /></a>
+        </div>
+        <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="workouts.html">Workout Routines</a></li>
+          <li class="link"><a href="nutrition.html">Nutrition Guide</a></li>
+          <li class="link"><a href="photos.html">Gallery</a></li>
+          <li class="link"><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="btn">Join Us</button>
+      </nav>
+    
+    <header class="photos">
+        <h1 id="photos">Gallery</h1>
+        <p id="photosdesc">Explore our collection of inspiring fitness moments.</p>
+    </header>
+
+    <main>
+        <section class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="g1.jpg" alt="Image 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="g2.jpg" alt="Image 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="g3.jpg" alt="Image 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="g4.jpg" alt="Image 4">
+                </div>
+                <div class="carousel-slide">
+                    <img src="g5.jpg" alt="Image 5">
+                </div>
+                <div class="carousel-slide">
+                    <img src="g6.jpg" alt="Image 6">
+                </div>
+            </div>
+            
+            <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+        </section>
+    </main>
+
+    <footer class="section__container footer__container">
+        <span class="bg__blur"></span>
+        <span class="bg__blur footer__blur"></span>
+        <div class="footer__col">
+          <div class="footer__logo"><img src="logo.png" alt="logo" /></div>
+          <p>
+            Begin your journey toward a healthier, stronger you with our unbeatable pricing plans. Let's work together to sweat, succeed, and achieve your goals!
+          </p>
+          
+        </div>
+        <div class="footer__col">
+          <h4>Community</h4>
+          <a href="#">Partners</a>
+          <a href="#">Branches</a>
+          <a href="#">Owners</a>
+        </div>
+        <div class="footer__col">
+          <h4>About Us</h4>
+          <a href="#">Articles</a>
+          <a href="#">Become a Mentor</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer__col">
+          <h4>Contact US</h4>
+          <a href="#"><img src="sm1.png" style="width: 40px; height: 40px; margin: 10px;" alt="image 1"></a>
+          <a href="#"><img src="sm2.png" style="width: 40px; height: 40px; margin: 10px;" alt="image 2"></a>
+          <a href="#"><img src="sm3.png" style="width: 40px; height: 40px; margin: 10px;" alt="image 3"></a>
+          <a href="#"><img src="sm4.png" style="width: 40px; height: 40px; margin: 10px;" alt="image 4"></a>
+          <a href="#"><img src="sm5.png" style="width: 40px; height: 40px; margin: 10px;" alt="image 5"></a>
+        </div>
+      </footer>
+      <div class="footer__bar">
+        Copyright © 2024 Master GYM. All rights reserved.
+      </div>
+
+    
+    <script>
+     let currentSlideIndex = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+
+    
+    if (index >= totalSlides) currentSlideIndex = 0;
+    else if (index < 0) currentSlideIndex = totalSlides - 1;
+    else currentSlideIndex = index;
+
+    
+    slides.forEach((slide, i) => {
+        slide.style.display = i === currentSlideIndex ? 'block' : 'none';
+    });
+}
+
+
+function moveSlide(step) {
+    showSlide(currentSlideIndex + step);
+}
+
+
+document.addEventListener('DOMContentLoaded', () => showSlide(currentSlideIndex));
+</script>
+</body>
+</html>
